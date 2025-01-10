@@ -1,16 +1,34 @@
-This repository contains the subjects proposed for the homework of the
-advanced computational techniques.
+# Project: Sparse and Dense Matrix Multiplication in Fortran
 
-You should pick two subjects among the three subjects below:
-- Project #1: HF and MP2 energy in C
-- Project #2: Sparse matrices in Fortran
-- Project #3: Molecular dybamics in C or Fortran
+## Overview
+This project implements different methods for multiplying sparse and dense matrices using Fortran. The goal is to compare the computational efficiency of each method and analyze their performance based on the size and filling degree of the matrices.
 
-You must fork this repository and create your files in the `project*`
-directory. Don't forget to `git add` your files, and make some frequent commits
-and `git push` to your fork.
-When you are done (or when the time limit is reached), you will make a pull-request
-of your fork to our GitHub repository.
+## Features
+- Reads sparse matrices from files in the `tests/` folder.
+- Converts sparse matrices to dense format.
+- Implements matrix multiplication using the following methods:
+  - BLAS (DGEMM)
+  - Manual algorithms in Fortran
+  - Direct multiplication in sparse format
+- Measures execution time and computational efficiency for performance analysis.
 
-If you need help with the creation of your GitHub token, read the inscructions given in the [token.pdf](token.pdf) file
+## File Structure
+/project
+│
+├── src/            
+│   ├── sparse.f90              # Handles operations on sparse matrices
+│   ├── dense_operations.f90    # Functions for dense matrix operations
+│   └── main.f90                # Main program to perform matrix multiplications
+│
+├── tests/          
+│   └── matrix_*                # Test matrices for performance evaluation
+│
+├── AUTHORS                     # List of contributors
+├── LICENSE                     # License information
+├── README.md                   # Project documentation
+└── INSTALL.md                  # Installation instructions
 
+## Usage
+1. Edit the file paths for the input matrices directly in the `main.f90` source code.
+2. Compile the program following the steps in `INSTALL.md`.
+3. Run the program and analyze the generated results.
